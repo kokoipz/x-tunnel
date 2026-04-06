@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
- set -euo pipefail
-+: "${HOME:=/root}"
- umask 077
+set -euo pipefail
+: "${HOME:=/root}"
+umask 077
 
 CONFIG_FILE="${HOME}/.suoha_tunnel_config"
 WG_PROFILE_DIR="${HOME}/.suoha_wg_profiles"
