@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail
-umask 077
+ set -euo pipefail
++: "${HOME:=/root}"
+ umask 077
 
 CONFIG_FILE="${HOME}/.suoha_tunnel_config"
 WG_PROFILE_DIR="${HOME}/.suoha_wg_profiles"
@@ -24,7 +25,7 @@ linux_install=("apt -y install" "apt -y install" "yum -y install" "yum -y instal
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LIB_DIR="${SCRIPT_DIR}/lib"
-REMOTE_LIB_BASE="https://raw.githubusercontent.com/FearW/x-tunnel/refs/heads/main/lib"
+REMOTE_LIB_BASE="https://raw.githubusercontent.com/kokoipz/x-tunnel/refs/heads/main/lib"
 
 # lib 校验模式：strict / permissive
 LIB_VERIFY_MODE="${LIB_VERIFY_MODE:-permissive}"
